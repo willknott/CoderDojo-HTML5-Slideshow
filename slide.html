@@ -1,0 +1,37 @@
+<html>
+<head>
+<script type="text/javascript">
+<!--
+var image1=new Image()
+image1.src="1.jpg"
+var image2=new Image()
+image2.src="2.jpg"
+var image3=new Image()
+image3.src="3.jpg"
+//-->
+</script>
+</head>
+<body>
+<img src="1.jpg" name="slide" />
+<script>
+<!--
+//variable that will increment through the images
+var step=1
+function slideit(){
+//if browser does not support the image object, exit.
+if (!document.images)
+return
+document.images.slide.src=eval("image"+step+".src")
+if (step<3)
+step++
+else
+step=1
+//call function "slideit()" every something seconds
+setTimeout("slideit()",3700)
+}
+slideit()
+//-->
+</script>
+</body>
+</html>
+
